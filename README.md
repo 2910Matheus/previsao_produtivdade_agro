@@ -199,6 +199,3 @@ Esse modelo apresentou o menor erro médio e maior estabilidade entre os folds d
 - Grupo Sprint 2 – Ingredion Challenge
 
 ---
-
-*Este README atende aos requisitos do entregável 1: documentação completa do pipeline, justificativas técnicas, prints e métricas ilustrativas.*
-
