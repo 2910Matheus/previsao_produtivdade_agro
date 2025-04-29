@@ -122,13 +122,33 @@ Implementado em `scripts/features.py`:
 
 ## 5. Construção e Validação do Modelo
 
-- Modelos testados:
-  - `RandomForestRegressor` (grid: `max_depth=[3,5], n_estimators=[100,200]`)
-  - `XGBRegressor` (grid: `max_depth=[2,3], learning_rate=[0.1,0.05]`)
-- **Validação**: `TimeSeriesSplit(n_splits=3, gap=2)` para respeitar dependências temporais.
-- **Métrica de Seleção**: `neg_mean_squared_error`.
+Para prever a produtividade agrícola com base em séries temporais multivariadas (NDVI e clima), optamos por modelos de aprendizado supervisionado robustos frente a dados não-lineares e com variáveis correlacionadas.
 
-**Melhor modelo**: XGBoost com `max_depth=2`, `learning_rate=0.1`.
+### 🔍 Modelos Avaliados
+
+Testamos dois algoritmos de regressão amplamente utilizados em problemas de séries temporais com dependência entre variáveis:
+
+- **Random Forest Regressor**: útil para capturar relações não lineares e interações entre variáveis, com baixa sensibilidade a outliers.
+  - Hiperparâmetros testados: `max_depth = [3, 5]`, `n_estimators = [100, 200]`
+
+- **XGBoost Regressor**: modelo baseado em árvores com boosting, eficaz para capturar padrões complexos e diferenças sazonais.
+  - Hiperparâmetros testados: `max_depth = [2, 3]`, `learning_rate = [0.1, 0.05]`
+
+### ⏳ Estratégia de Validação
+
+Utilizamos a validação temporal com `TimeSeriesSplit(n_splits=3, gap=2)` para evitar vazamento de informação entre anos consecutivos, garantindo que o modelo fosse avaliado apenas com dados futuros em relação ao treinamento.
+
+### 📏 Métrica de Seleção
+
+A principal métrica adotada foi o **erro quadrático médio negativo** (`neg_mean_squared_error`), por sua sensibilidade a grandes desvios, refletindo com precisão falhas na previsão de produtividade.
+
+### 🏆 Modelo Selecionado
+
+O modelo com melhor desempenho foi o **XGBoost Regressor** com:
+- `max_depth = 2`
+- `learning_rate = 0.1`
+
+Esse modelo apresentou o menor erro médio e maior estabilidade entre os folds de validação temporal, mostrando-se mais eficaz que o Random Forest no ajuste à variabilidade interanual da produtividade.
 
 ---
 
