@@ -8,26 +8,21 @@ Este repositório contém a sprint 2 do desafio Ingredion: desenvolvimento de um
 
 ```
 ├── data
-│   ├── raw                 # Dados brutos de NDVI e clima
-│   └── processed           # Dados tratados e features extraídas
+│   ├── dados_mapas_inmet_palotina_2015 a 2025.csv          # Dados inmet
+│   └── satveg_planilha.xlsx                                # Dados satveg
 │
-├── notebooks              # Jupyter Notebooks para exploração e modelagem
-│   └── EDA_segmentation.ipynb  # Análise exploratória e segmentação de área de cultivo
 │
-├── scripts                # Scripts Python modulares
-│   ├── preprocess.py      # Carregamento e tratamento de dados
-│   ├── segmentation.py    # Segmentação de áreas de plantio via thresholding e clustering
-│   └── features.py        # Extração de features e criação de base final
+├── scripts                # Notebook
+│   ├── ModeloIA.ipynb     # Modelo IA com o carregamento e a segmentação
 │
-├── models                 # Modelos treinados e objetos salvos
+├── bestModel              # Modelos treinados e objetos salvos
 │   ├── melhor_modelo.pkl  # Modelo selecionado
 │   └── scaler.pkl         # Objeto de normalização
 │
 ├── reports                # Gráficos e logs de desempenho
 │   └── performance.png    # Comparação real vs predito
 │
-├── README.md              # Documentação geral (este arquivo)
-└── requirements.txt       # Dependências Python
+└── README.md              # Documentação geral (este arquivo)
 ```
 
 ---
@@ -57,8 +52,6 @@ No notebook `script/ModeloIA.ipynb`, realizamos as seguintes análises:
    - Decomposição em tendência, sazonalidade e ruído usando `seasonal_decompose` (período=365 dias):
      - Tendência mostra crescimento sutil até 2010, estabilização posterior.
      - Sazonalidade evidencia picos regulares de novembro a janeiro.
-
-   ![Decomposição Sazonal de NDVI](reports/ndvi_decompose.png)
 
 2. **Correlação Entre Variáveis**
    - Coeficiente de correlação de Pearson (ano agrícola):
