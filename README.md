@@ -2,6 +2,8 @@
 
 Este repositório contém a sprint 2 do desafio Ingredion: desenvolvimento de um modelo de IA para previsão de produtividade agrícola, com base em séries temporais de NDVI e dados meteorológicos.
 
+Foi utilizado como base de dados do https://portal.inmet.gov.br/ e www.satveg.cnptia.embrapa.br
+
 ---
 
 ## 📂 Estrutura do Repositório
