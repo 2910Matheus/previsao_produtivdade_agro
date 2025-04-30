@@ -154,8 +154,6 @@ O modelo com melhor desempenho foi o **XGBoost Regressor** com:
 ### Justificativa do modelo
 
 Esse modelo apresentou o menor erro médio e maior estabilidade entre os folds de validação temporal, mostrando-se mais eficaz que o Random Forest no ajuste à variabilidade interanual da produtividade.
-O modelo selecionado foi o Random Forest Regressor, por sua robustez na manipulação de dados heterogêneos e pela capacidade de capturar não linearidades nas relações entre variáveis climáticas e o NDVI. 
-Essa escolha foi validada por experimentação com diferentes algoritmos, onde o Random Forest apresentou o melhor equilíbrio entre precisão e generalização.
 
 ---
 
