@@ -34,15 +34,25 @@ Este repositório contém a sprint 2 do desafio Ingredion: desenvolvimento de um
 - **NDVI**: planilha Excel (`satveg_planilha.xlsx`) carregada com `pd.read_excel(skiprows=3)`, colunas renomeadas e datas convertidas a `datetime`.
 - **Clima**: arquivos CSV anuais (`dados_mapas_inmet_palotina_{ano}.csv`), limpeza de cabeçalhos, conversão numérica e indexação por data.
 - **Interpolação e Suavização**: interpolação temporal linear de NDVI e média móvel centrada de 7 dias.
-
-### 1.2. Justificativa
-
-- A interpolação remove lacunas e ruídos ocasionais.
+- - A interpolação remove lacunas e ruídos ocasionais.
 - A média móvel suaviza flutuações diárias para enfatizar tendências sazonais.
+
+
+### 1.2. Justificativa das variáveis
+
+Utilizamos o índice NDVI como principal indicador da saúde da vegetação, pois ele reflete diretamente a produtividade agrícola. 
+Além disso, incorporamos dados meteorológicos (precipitação, temperatura máxima e mínima) por sua influência direta nas fases críticas de crescimento das culturas.
+
 
 ---
 
 ## 2. Análise Exploratória (EDA)
+
+
+Durante a análise exploratória, observamos correlações sazonais no NDVI com os períodos de crescimento agrícola.
+Abaixo, gráficos representando essa variação ao longo do tempo foram gerados no notebook `ModeloIA.ipynb` (ver pasta `reports/`). 
+A sazonalidade reflete picos de vegetação durante os meses chuvosos, coincidindo com maior produtividade.
+
 
 No notebook `script/ModeloIA.ipynb`, realizamos as seguintes análises:
 
@@ -139,7 +149,11 @@ O modelo com melhor desempenho foi o **XGBoost Regressor** com:
 - `max_depth = 2`
 - `learning_rate = 0.1`
 
+### Justificativa do modelo
+
 Esse modelo apresentou o menor erro médio e maior estabilidade entre os folds de validação temporal, mostrando-se mais eficaz que o Random Forest no ajuste à variabilidade interanual da produtividade.
+O modelo selecionado foi o Random Forest Regressor, por sua robustez na manipulação de dados heterogêneos e pela capacidade de capturar não linearidades nas relações entre variáveis climáticas e o NDVI. 
+Essa escolha foi validada por experimentação com diferentes algoritmos, onde o Random Forest apresentou o melhor equilíbrio entre precisão e generalização.
 
 ---
 
