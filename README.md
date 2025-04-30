@@ -177,10 +177,10 @@ Essa escolha foi validada por experimentação com diferentes algoritmos, onde o
 
 - Grupo Sprint 2 – Ingredion Challenge
 
-Matheus Augusto Rodrigues Maia_RM560683
-Alex da Silva Lima_RM559784
-Johnatan Sousa Macedo Loriano _RM559546
-Bruno Henrique Nielsen Conter_RM560518 
-Fabio Santos Cardoso_RM560479
+- Matheus Augusto Rodrigues Maia_RM560683
+- Alex da Silva Lima_RM559784
+- Johnatan Sousa Macedo Loriano _RM559546
+- Bruno Henrique Nielsen Conter_RM560518 
+- Fabio Santos Cardoso_RM560479
 
 ---
