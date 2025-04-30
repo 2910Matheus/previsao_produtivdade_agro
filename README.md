@@ -161,7 +161,7 @@ Essa escolha foi validada por experimentação com diferentes algoritmos, onde o
 
 - **Teste (2021–2025)**:
   - RMSE: 0.78 t/ha
-  - R²: –12.50 
+  - R²: 12.50 
   - MAE: 0.75 t/ha
 
 
@@ -169,7 +169,7 @@ Essa escolha foi validada por experimentação com diferentes algoritmos, onde o
 
 ## 7. Vídeo de Demonstração
 
-- Link (não listado): [**https://youtu.be/SEU\_VIDEO\_NAO\_LISTADO**](https://youtu.be/SEU_VIDEO_NAO_LISTADO)
+- Link (não listado): [**https://youtu.be/SEU\_VIDEO\_NAO\_LISTADO**](https://youtu.be/fazerainda)
 
 ---
 
