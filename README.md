@@ -169,7 +169,7 @@ Esse modelo apresentou o menor erro médio e maior estabilidade entre os folds d
 
 ## 7. Vídeo de Demonstração
 
-- Link (não listado): [**https://youtu.be/fazeraindaO**](https://youtu.be/fazerainda)
+- Link (não listado): [**https://youtu.be/VideoDemonstracao**]([https://youtu.be/fazerainda](https://youtu.be/PvSzy-tWDuI))
 
 ---
 
