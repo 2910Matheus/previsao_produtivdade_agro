@@ -49,7 +49,7 @@ Este repositório contém a sprint 2 do desafio Ingredion: desenvolvimento de um
 
 ## 2. Análise Exploratória (EDA)
 
-No notebook `notebooks/EDA_segmentation.ipynb`, realizamos as seguintes análises:
+No notebook `script/ModeloIA.ipynb`, realizamos as seguintes análises:
 
 1. **Série Temporal de NDVI (2000–2025)**
    - Média anual de NDVI: **0.54**
@@ -81,11 +81,9 @@ No notebook `notebooks/EDA_segmentation.ipynb`, realizamos as seguintes análise
    - Mascara resultante cobre em média **42%** da área total de análise.
    - Visualização da máscara sobreposta em imagem GeoTIFF no notebook.
 
-Estes resultados foram documentados com prints e comentários no Colab, garantindo a replicabilidade dos passos e a interpretação dos padrões explorados.
+## 3. Segmentação de Áreas de Cultivo
 
-## 3. Segmentação de Áreas de Cultivo Segmentação de Áreas de Cultivo
-
-Implementado em `scripts/segmentation.py` e demonstrado em `notebooks/EDA_segmentation.ipynb` com:
+Demonstrado em `script/ModeloIA.ipynb` com:
 
 - **Thresholding** de NDVI (e.g. NDVI > 0.4) para mascarar vegetação ativa.
 - **Clustering (K-Means)** dos pixels NDVI suavizados para separar áreas de solo, vegetação e nuvens.
@@ -103,7 +101,7 @@ Esta segmentação permite focar a extração de features apenas nos pixels repr
 
 ## 4. Extração de Features
 
-Implementado em `scripts/features.py`:
+Implementado em `script/ModeloIA.ipynb`:
 
 - Estatísticas por Ano Agrícola (Jul–Jun): `max, min, mean, sum` de NDVI suavizado.
 - Variáveis derivadas:
@@ -156,39 +154,13 @@ Esse modelo apresentou o menor erro médio e maior estabilidade entre os folds d
 
 - **Teste (2021–2025)**:
   - RMSE: 0.78 t/ha
-  - R²: –12.50 (indicando necessidade de ajustes adicionais)
+  - R²: –12.50 
   - MAE: 0.75 t/ha
 
 
-
-> *Observação*: o R² negativo sugere que um modelo simples de média poderia, por ora, superar o ajuste; recomenda-se revisar outliers e engenharia de features.
-
 ---
 
-## 7. Como Executar
-
-1. Crie um ambiente virtual Python e instale dependências:
-   ```bash
-   pip install -r requirements.txt
-   ```
-2. Execute o pré-processamento:
-   ```bash
-   python scripts/preprocess.py
-   ```
-3. Gere a EDA e a segmentação:
-   ```bash
-   jupyter notebook notebooks/EDA_segmentation.ipynb
-   ```
-4. Extraia features e treine o modelo:
-   ```bash
-   python scripts/features.py
-   python scripts/train_model.py
-   ```
-5. Veja os resultados em `reports/` e consulte o notebook.
-
----
-
-## 8. Vídeo de Demonstração
+## 7. Vídeo de Demonstração
 
 - Link (não listado): [**https://youtu.be/SEU\_VIDEO\_NAO\_LISTADO**](https://youtu.be/SEU_VIDEO_NAO_LISTADO)
 
